@@ -1,0 +1,946 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Fırat KAYA">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+
+<title>The LavaFun - Minecraft Network</title>
+
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="canonical" href="https://the-gr.id">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The LavaFun - Minecraft Network">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://the-gr.id">
+<meta property="og:site_name" content="The Lavafun">
+
+<!-- EXTRAS -->
+<link rel="stylesheet" href="css/sweetalert2.min.css">
+<link rel="stylesheet" href="css/select2.min.css">
+<link rel="stylesheet" href="css/select2-bootstrap4.min.css">
+<link rel="stylesheet" href="css/tiny-slider.min.css">
+
+<!-- FONTS -->
+<link rel="stylesheet" type="text/css" href="css/all.css">
+
+<!-- THEMES -->
+<link rel="stylesheet" type="text/css" href="css/theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/extra.css">
+
+<link rel="stylesheet" type="text/css" href="css/content-styles.css">
+
+
+<style type="text/css">
+  .credit-icon::before {
+    content: ' ';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(images/credit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1rem;
+  }
+</style>
+
+<!-- THEME SETTINGS -->
+<script>
+  var defaultTheme = "dark"; // light, dark
+</script>
+<!-- LIGHT -->
+<style>
+  .btn-primary {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: #fff !important;
+  }
+  .btn-primary:hover {
+    color: #fff !important;
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+  }
+  .btn-translucent-primary {
+    background-color: #eff6ff !important;
+    color: #3b82f6 !important;
+  }
+  .btn-translucent-primary:hover {
+    color: #fff !important;
+    background-color: #3b82f6 !important;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .list-group-flush>.list-group-item:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .dropdown-item:first-child {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+  }
+  .dropdown-item:last-child {
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+  }
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: #2563eb;
+  }
+  .navbar-expand-lg .navbar-nav .nav-item.active>.nav-link:not(.disabled),
+  .navbar-expand-lg .navbar-nav .nav-item:hover>.nav-link:not(.disabled),
+  .navbar-expand-lg .navbar-nav .nav-item:focus>.nav-link:not(.disabled),
+  .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #3b82f6 !important;
+    background-color: #eff6ff !important;
+  }
+  .signin-form .signin-form-card .nav-link-style:hover {
+    color: #3b82f6 !important;
+  }
+  .list-group-item.active {
+    color: #fff !important;
+    background-color: #3b82f6 !important;
+  }
+  .linked-list .list-group-item a:hover {
+    background-color: #eff6ff !important;
+    color: #3b82f6 !important;
+  }
+  .list-group-item.active a, .list-group-item.active a:hover {
+    color: #fff !important;
+  }
+  .widget-link:hover {
+    color: #3b82f6 !important;
+  }
+  .select2-results__option[aria-selected=true] {
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+  }
+  .select2-results__option--highlighted {
+    background-color: #eff6ff !important;
+    color: #3b82f6 !important;
+  }
+  
+  .dropdown-item:hover, .dropdown-item.active {
+    background-color: #eff6ff !important;
+    color: #3b82f6 !important;
+  }
+
+  .widget-light .widget-title {
+    color: #60a5fa !important;
+  }
+  .text-primary {
+    color: #3b82f6 !important;
+  }
+  .bg-primary {
+    background-color: #3b82f6 !important;
+  }
+  .store-nav .nav-link.active, .store-nav .nav-link:hover {
+    background-color: #3b82f6 !important;
+  }
+  a:hover, .breadcrumb-item>a:hover, .nav-link-style:hover {
+    color: #3b82f6 !important;
+  }
+  .btn-danger:hover,
+  .btn-success:hover,
+  .btn-primary:hover,
+  .btn-info:hover,
+  .btn-warning:hover {
+    color: #fff !important;
+  }
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+  }
+</style>
+
+<!-- DARK -->
+<style>
+  body.dark {
+    color: rgba(255, 255, 255, 0.7) !important;
+    background-color: #171a21 !important;
+  }
+  .dark .text-body {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark a {
+    color: #fff;
+  }
+  .dark a:hover {
+    color: #3b82f6;
+  }
+  .dark .btn-light {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .dark .btn-light:hover {
+    background-color: #171a21 !important;
+  }
+  .dark .btn-secondary {
+    background-color: #171a21 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .dark .btn-secondary:hover {
+    background-color: #2a2e37 !important;
+  }
+  .dark .nav-link-style, .dark .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark .form-check-input {
+    border-color: rgba(62, 62, 62, 0.7) !important;
+    background-color: #171a21 !important;
+  }
+  .dark .form-check-label {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark .header {
+    background-color: #111111 !important;
+  }
+  .dark .header .nav-link, .dark .header .nav-link-style {
+    color: #fff !important;
+  }
+  .dark .navbar-expand-lg .navbar-nav .nav-item.active>.nav-link:not(.disabled),
+  .dark .navbar-expand-lg .navbar-nav .nav-item:hover>.nav-link:not(.disabled),
+  .dark .navbar-expand-lg .navbar-nav .nav-item:focus>.nav-link:not(.disabled),
+  .dark .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #ffffff !important;
+    background-color: #3b82f6 !important;
+  }
+  .dark .header .offcanvas {
+    background-color: #111111 !important;
+  }
+  .dark .offcanvas-collapse .offcanvas-body .navbar-nav .nav-item {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .offcanvas-collapse .offcanvas-body .navbar-nav .dropdown-menu .dropdown-item {
+    color: #fff !important;
+  }
+  .dark .btn-close {
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/.625em auto no-repeat;
+  }
+  .dark .footer, .dark footer .bg-dark {
+    background-color: #111111 !important;
+  }
+  .dark .btn-play span {
+    color: #fff !important;
+    background-color: #171a21 !important;
+  }
+  .dark h1, .dark .h1, .dark h2, .dark .h2, .dark h3, .dark .h3, .dark h4, .dark .h4, .dark h5, .dark .h5, .dark h6, .dark .h6 {
+    color: #fff !important;
+  }
+  .dark .breadcrumb-item>a {
+    color: #fff !important;
+  }
+  .dark .card-hover:hover,
+  .dark .card-active,
+  .dark .card-hover.border-0::before,
+  .dark .card-active.border-0::before {
+    border-color: rgba(62, 62, 62, 0.7) !important;
+  }
+  .dark .card-product .price {
+    color: #fff !important;
+  }
+  .dark .card {
+    color: rgba(255, 255, 255, 0.7) !important;
+    background-color: #111111 !important;
+  }
+  .dark .card-header {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  .dark .border-top, .dark .border-bottom {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .signin-form .signin-form-card {
+    background-color: #111111 !important;
+  }
+  .dark .signin-form .signin-form-card .nav-link-style {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark .signin-form .signin-form-card .nav-link-style:hover {
+    color: #3b82f6 !important;
+  }
+  .dark .section-help-cta {
+    background-color: #101519 !important;
+  }
+  .dark .faq-card {
+    background-color: #111111 !important;
+    border-color: transparent !important;
+  }
+  .dark .list-group-item {
+    background-color: #111111 !important;
+  }
+  .dark .list-group-item a {
+    color: #fff !important;
+  }
+  .dark .list-group-item.active {
+    background-color: #3b82f6 !important;
+  }
+  .dark .list-group-item.active a {
+    color: #fff !important;
+  }
+  .dark .form-control {
+    background-color: #171a21;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  .dark .form-label, .dark .col-form-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark .form-control-plaintext {
+    color: #fff !important;
+  }
+  .dark .select2-selection {
+    background-color: #171a21 !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .select2-results__option {
+    background-color: #171a21 !important;
+    color: #fff !important;
+  }
+  .dark .select2-results__option[aria-selected=true] {
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+  }
+  .dark .select2-results__option--highlighted {
+    background-color: #ffe1b9 !important;
+    color: #3b82f6 !important;
+  }
+  .dark .select2-container .select2-search--inline .select2-search__field {
+	  background-color: #171a21 !important;
+  }
+  .dark .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+	  background-color: #171a21 !important;
+		color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove:hover {
+	  color: #fff
+  }
+  .dark .select2-dropdown {
+    border-color: rgb(53 49 49) !important;
+  }
+  .dark #searchBox .input-group-prepend .input-group-text {
+    border-radius: 0;
+    height: 100%;
+    background-color: #171a21 !important;
+  }
+  .dark tr {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark #leaderboards tr.active {
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+  }
+  .dark .table>:not(caption)>*>* {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .search-cancel {
+    background-color: #171a21;
+    color: #fff;
+    height: 100%;
+  }
+  .dark .bg-dark-2 {
+    background-color: #101519 !important;
+  }
+  .dark .store-nav .nav-link.active, .dark .store-nav .nav-link:hover {
+    color: #fff !important;
+  }
+  .dark .broadcast {
+    background-color: #111111;
+  }
+  .dark .page-item.active .page-link {
+    color: #fff !important;
+    background-color: #111111 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .dropdown-menu {
+    background-color: #171a21 !important;
+    color: #fff !important;
+  }
+  .dark .dropdown-item:hover, .dark .dropdown-item.active {
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+  }
+  .dark .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .nav-tabs .nav-item.show .nav-link,
+  .dark .nav-tabs .nav-link.active {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important
+  }
+  .dark .nav-tabs .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark .nav-link-style:hover {
+    color: #fff !important;
+  }
+  .dark .profile-card {
+    background-color: #111111 !important;
+  }
+  .dark .profile-card .bg-secondary {
+    background-color: #000 !important;
+  }
+  .dark .btn-profile {
+    color: #fff !important;
+    background-color: #3b82f6 !important;
+    border-color: transparent !important;
+  }
+  .dark .btn-profile:hover {
+    border-color: transparent !important;
+  }
+  .dark .modal-content {
+    color: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background-color: #000 !important;
+  }
+  .dark .modal-header {
+    color: #fff !important;
+  }
+  .dark .title.background:before {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+  .dark .title span {
+    color: #fff !important;
+    background-color: #000 !important;
+  }
+  .dark .modal-header, .dark .modal-footer {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .swal2-popup {
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background-color: #000 !important;
+  }
+  .dark #swal2-content {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .dark .was-validated .form-control:valid,
+  .dark .was-validated .form-control.is-valid,
+  .dark .was-validated .form-select:valid,
+  .dark .was-validated .form-select.is-valid {
+    border-color: #16c995 !important;
+  }
+  .dark .btn-tag {
+    color: #fff !important;
+    background-color: #171a21 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .dark .meta-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .dark .meta-link:hover {
+    color: #fff !important;
+  }
+  
+  .dark .vip-table {
+    background-color: #111111 !important;
+  }
+  .dark .table-header {
+    color: #fff !important;
+  }
+  .dark .ck-editor__main a {
+    color: #007bff !important;
+  }
+  .dark .ck-editor__main a:active,
+  .dark .ck-editor__main a:hover,
+  .dark .ck-editor__main a:focus{
+    color: #0056b3 !important;
+  }
+
+  .dark pre {
+    color: #ffffff !important;
+    border: 1px solid #293d54;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .shopping-cart-count-circle {
+    background-color: #2563eb;
+  }
+</style>
+
+
+<!-- CUSTOM CSS -->
+<style type="text/css">
+  </style>
+
+<!-- ROLE CSS -->
+<style type="text/css">
+        
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+      </style></head>
+<body style="overflow: auto;" class="dark">
+  			<style>
+			.shopping-cart-count { display: none; }
+		</style>
+	              <div class="header-banner" style="margin-top: 0">
+    <div id="parallax-header-image">
+      <img data-depth="0.25" class="header-banner-image" src="images/7f6c8b56dbefe32facca219d9df89666.png">
+    </div>
+    <div class="header-banner-content">
+      <div class="container">
+        <div class="row g-0 w-100 align-items-center">
+          <div class="col-md-4 d-flex justify-content-start">
+            <a href="#!" data-toggle="copyip" data-clipboard-action="copy" data-clipboard-text="play-the.gr.id" class="d-none d-lg-flex text-uppercase">
+              <div class="me-3">
+                <i class="shi-gamepad text-white" style="font-size: 3rem;"></i>
+              </div>
+              <div>
+                <div style="color: #bbb;">
+                  <span data-toggle="onlinetext" server-ip="play-the.gr.id">-/-</span>
+                  <span>players online</span>
+                </div>
+                <div>
+                  <span class="text-white">play-the.gr.id</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 d-flex flex-column justify-content-center">
+            <div class="zoom-hover text-center">
+              <a href="/">
+                <img src="images/239d83e5173b456c99aa9f1e23f39eed.png" class="header-banner-logo" alt="The Grid Logo">
+              </a>
+            </div>
+            <div class="text-center mt-4">
+              <a href="/play" class="btn-play">
+                <span>Play Now</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 d-none d-lg-flex justify-content-end">
+            <a href="https://discord.gg/Qwd3PevhDC" class="d-flex text-end text-uppercase" target="_blank">
+              <div>
+                <div>
+                  <span style="color: #bbb;">Click to Join!</span>
+                </div>
+                <div>
+                  <span class="text-white">Discord Server</span>
+                </div>
+              </div>
+              <div class="ms-3">
+                <i class="shi-discord text-white" style="font-size: 3rem;"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-shadow navbar-sticky" data-scroll-header="" data-fixed-element="">
+    <div class="container px-0 px-xl-3">
+      <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+	  
+      <div class="d-flex align-items-center order-lg-3 ms-lg-auto">
+                  <a class="nav-link-style text-nowrap" href="/login">
+            <i class="shi-user fs-xl me-2"></i>
+            Login          </a>
+                      <a class="btn btn-primary ms-grid-gutter d-none d-lg-inline-block" href="/register">
+              Register            </a>
+                  		                                  <a href="/checkout" class="btn btn-icon btn-primary ms-2 position-relative">
+            <span class="shopping-cart-count shopping-cart-count-circle">0</span>
+            <i class="shi shi-shopping-cart"></i>
+          </a>
+              </div>
+	  
+      <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+        <div class="offcanvas-header navbar-shadow">
+          <h5 class="mt-1 mb-0">Menu</h5>
+          <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- Menu-->
+          <ul class="navbar-nav" style="margin-left: -18px">
+                                                                                                              <li class="nav-item active">
+                  <a class="nav-link" href="/">
+                    Home                  </a>
+                </li>
+                                                                                                                                                            <li class="nav-item ">
+                  <a class="nav-link" href="/vote">
+                    Vote                  </a>
+                </li>
+                                                                                                                              <li class="nav-item ">
+                  <a class="nav-link" href="/store">
+                    Store                  </a>
+                </li>
+                                                                                                                              <li class="nav-item ">
+                  <a class="nav-link" href="/help">
+                    Help                  </a>
+                </li>
+                                                                </ul>
+        </div>
+		
+                  <div class="offcanvas-footer border-top">
+            <a href="/login" class="btn btn-profile btn-outline-secondary w-100 me-2">
+              <i class="shi-log-in me-1"></i>
+              Login            </a>
+                          <a href="/register" class="btn btn-primary w-100">
+                <i class="shi-user me-1"></i>
+                Register              </a>
+                      </div>
+              </div>
+    </div>
+  </header>
+<main class="main" role="main">
+  		<style type="text/css">
+			</style>
+	<section class="section home-section">
+		<div class="container">
+																											
+			<div class="row">
+				<div class="col-md-12">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+															<li class="breadcrumb-item active" aria-current="page">Blog</li>
+													</ol>
+					</nav>
+				</div>
+			</div>
+			<h2 class="h3 mb-3">Blog</h2>
+			<div class="row">
+				<div class="col-md-12">
+																							<div class="card card-hover">
+								<div class="row g-0">
+									<div class="col-md-5">
+										<a class="d-flex h-100" href="/posts/1/about-the-gr-id">
+											<img class="lazyload card-img-right" data-src="/apps/main/public/assets/img/news/c5e990fa233a93d7864f8a4afaa96cc1.png" src="images/news.png" alt="The Grid Posts - About The-Gr.id ">
+										</a>
+									</div>
+									<div class="col-md-7">
+										<div class="news-card-body">
+											<a class="meta-link fs-sm mb-2" href="/categories/about-the-server">
+												About the server											</a>
+											<span class="meta-link fs-sm mb-2">-</span>
+											<span class="meta-link fs-sm mb-2">
+												11.07.2024											</span>
+											<h3 class="h4 nav-heading mb-3">
+												<a href="/posts/1/about-the-gr-id">
+													About The-Gr.id 												</a>
+											</h3>
+											<p class="mb-3"> The-Gr.id is a virtual Minecraft server/realm where players unite to explore, build, and compete in a variety of ways. From survival challenges that test teamwork and resourcefulness to creative hubs where imaginations run wild, each server off</p>
+											<div class="d-flex justify-content-end">
+												<a href="/posts/1/about-the-gr-id" class="btn btn-primary">Read More</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+												<div class="d-md-flex justify-content-center align-items-center pt-5 pb-2 ">
+							<nav class="mb-4" aria-label="Sayfalar">
+								<ul class="pagination justify-content-center">
+																		<li class="page-item d-sm-none">
+										<span class="page-link page-link-static">1 / 1</span>
+									</li>
+																																																																																																																													<li class="page-item active d-none d-sm-block" aria-current="page">
+												<a class="page-link" href="/blog/1">1</a>
+											</li>
+																																																																																																																																			</ul>
+							</nav>
+						</div>
+									</div>
+							</div>
+		</div>
+	</section>
+</main>
+  <!-- Back to top button-->
+  <a id="scrollUp" class="btn-scroll-top" href="#" data-scroll="" data-fixed-element="">
+    <i class="btn-scroll-top-icon shi-arrow-up"></i>
+  </a>
+  <!-- Footer-->
+      <section class="footer-banner jarallax bg-dark py-5" data-jarallax="" data-speed="0.25">
+      <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: .7;"></span>
+      <div class="jarallax-img" style="background-image: url(images/footer-bg.png);"></div>
+      <div class="container position-relative zindex-5 text-white">
+        <div class="row align-items-center">
+          <div class="col-12 col-md">
+            <h3 class="h3 mb-0 text-white text-center text-md-start">
+              Are you ready to be best?            </h3>
+          </div>
+          <div class="col-12 col-md-auto mt-4 mt-md-0">
+            <a href="/play" class="btn btn-lg btn-light w-100">
+              <img class="me-2" src="images/sword.svg" width="24" height="24">
+              Play Now            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer bg-dark pt-5 pt-md-6">
+    <div class="container pt-3 pt-md-0">
+      <div class="row mb-4">
+        <div class="col-md-5 mb-3">
+          <div class="d-sm-flex justify-content-between">
+            <div class="widget widget-light pb-1 mb-4">
+              <h4 class="widget-title">About</h4>
+              <p class="text-light opacity-70 mb-2">
+                                  Registered: 
+Alonefield LLC 
+447 Broadway 2nd FL
+New York City,
+New York
+10013 United States                              </p>
+              <div class="d-flex gap-1 mt-4">
+                                                  <div class="btn-group dropdown dropup">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="languageMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      English                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageMenu">
+                                              <a class="dropdown-item " href="?lang=cs">
+                          Čeština                        </a>
+                                              <a class="dropdown-item " href="?lang=de">
+                          Deutsch                        </a>
+                                              <a class="dropdown-item active" href="?lang=en">
+                          English                        </a>
+                                              <a class="dropdown-item " href="?lang=es">
+                          Español                        </a>
+                                              <a class="dropdown-item " href="?lang=fr">
+                          Français                        </a>
+                                              <a class="dropdown-item " href="?lang=hi">
+                          हिन्दी                        </a>
+                                              <a class="dropdown-item " href="?lang=hu">
+                          Magyar                        </a>
+                                              <a class="dropdown-item " href="?lang=it">
+                          Italiano                        </a>
+                                              <a class="dropdown-item " href="?lang=ja">
+                          日本語                        </a>
+                                              <a class="dropdown-item " href="?lang=nl">
+                          Nederlands                        </a>
+                                              <a class="dropdown-item " href="?lang=no">
+                          Norsk                        </a>
+                                              <a class="dropdown-item " href="?lang=pl">
+                          Polski                        </a>
+                                              <a class="dropdown-item " href="?lang=pt_BR">
+                          Português (Brasil)                        </a>
+                                              <a class="dropdown-item " href="?lang=ro">
+                          Română                        </a>
+                                              <a class="dropdown-item " href="?lang=ru">
+                          Русский                        </a>
+                                              <a class="dropdown-item " href="?lang=sv">
+                          Svenska                        </a>
+                                              <a class="dropdown-item " href="?lang=tr">
+                          Türkçe                        </a>
+                                              <a class="dropdown-item " href="?lang=vi">
+                          Tiếng Việt                        </a>
+                                              <a class="dropdown-item " href="?lang=zh_CN">
+                          中文                        </a>
+                                          </ul>
+                  </div>
+                  
+                                                
+                <button id="changeMode" class="btn btn-icon btn-secondary">
+                  <i class="shi shi-moon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-light pb-1 mb-4">
+            <h4 class="widget-title">Quick Menu</h4>
+            <ul>
+              <li>
+                <a href="/" class="widget-link">Home</a>
+              </li>
+                              <li>
+                  <a href="/store" class="widget-link">Store</a>
+                </li>
+                                            <li>
+                  <a href="/login" class="widget-link">Login</a>
+                </li>
+                                  <li>
+                    <a href="/register" class="widget-link">Register</a>
+                  </li>
+                                          </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-light pb-1 mb-4">
+            <h4 class="widget-title">Social Media</h4>
+            <i class="custom-icon"></i>
+            <ul>
+                                                                                                                                <li>
+                    <a class="widget-link" href="https://the-gr.id/discord" rel="external">
+                      <i class="shi-discord text-white me-1"></i> Discord
+                    </a>
+                  </li>
+                                          </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget widget-light pb-1 mb-4">
+            <h4 class="widget-title">Contact</h4>
+            <ul>
+                              <li>You can edit contact details from the Dashboard.</li>
+                          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark py-4 py-md-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md text-center text-md-start mb-2 mb-md-0 text-light opacity-50 me-1">
+            All rights reserved. © 2025          </div>
+          <div class="col-12 col-md-auto text-center text-md-start">
+            <copyright>
+              Powered by
+              <a class="text-white fw-bold" href="/discord" rel="external">
+                LonerOS
+              </a>
+            </copyright>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+<script>
+  var lang = {
+    credits: "%credit% credit(s)",
+    search: "Search...",
+    loading: "Loading...",
+    confirm_delete: "Are you sure you want to delete?",
+    player_not_found: "Player not found!",
+    play_again: "Play again",
+    spinning: "Spinning...",
+    apply: "Apply",
+    remove: "Remove",
+    alert_btn_ok: "OK",
+    alert_btn_cancel: "Cancel",
+    alert_btn_confirm: "Confirm",
+    alert_btn_buy_credit: "Buy Credits",
+    alert_title_success: "Success!",
+    alert_title_error: "Error!",
+    alert_title_warning: "Warning!",
+    alert_title_you_lost: "You Lost!",
+    alert_title_you_win: "You Win!",
+    alert_message_server_address_copied: "Server address copied to clipboard!",
+    alert_message_something_went_wrong: "Something went wrong! Please try again later.",
+    alert_message_lottery_error_duration: "You have to wait until %date% to re-spin for free.",
+    alert_message_lottery_you_lost: "Sorry, you lost! Try again next time.",
+    alert_message_lottery_you_win: "Congratulations! You won <strong>%prize%</strong>!",
+    alert_message_lottery_you_win_chest: "The product has been added to your chest.",
+    alert_message_lottery_you_win_credit: "Current Credit: %credit%",
+    alert_message_lottery_credit_error: "You don't have enough credit to play the game.",
+    alert_message_chest_confirm: "Please make sure you are on the server before confirming, otherwise the product may not reach you!",
+    alert_message_chest_sending: "Delivery is in progress, please wait and do not leave the page...",
+    alert_message_chest_sent: "The product has been successfully delivered! Have fun!",
+    alert_message_chest_server_error: "There was a problem connecting to the server! Please try again later.",
+    alert_message_chest_amount_error: "You can receive a maximum of %amount%!",
+    alert_message_login: "Please login to do this.",
+    help_voting_success: "You have successfully voted!",
+    alert_message_checkout_credit_error: "You don't have enough credit.",
+    alert_message_checkout_success: "Your purchase has been completed and added to your chest.",
+    alert_message_checkout_quantity_error: "Enter a valid quantity!",
+    alert_message_checkout_stock_error: "Stock limit has been reached for this product!",
+    alert_message_checkout_stock_error2: "Not enough items in the stock!",
+    alert_message_checkout_cart_empty_error: "Your shopping cart is empty!",
+    alert_message_checkout_coupon_invalid: "Coupon is invalid!",
+    alert_message_checkout_coupon_invalid_for_cart: "This coupon is not valid for your shopping cart!",
+    alert_message_checkout_coupon_used: "You have used this coupon before!",
+    alert_message_checkout_coupon_expired: "This coupon has expired!",
+    alert_message_checkout_coupon_login: "You must be logged in to use coupons!",
+    alert_message_checkout_coupon_success: "Coupon applied successfully!",
+    alert_message_checkout_coupon_price: "You must have a minimum of %amount% credits in your account to use this coupon!",
+    alert_message_not_found: "Not found!",
+    limited_stock: "Limited Stock!",
+    out_of_stock: "Out of Stock!"
+  }
+</script><script>
+  var themePath = '/apps/main/themes/blaze';
+  var langCode = 'en';
+  var currency = 'USD';
+  var currencySymbol = '$';
+  var currencyRate = 1.0000000000;
+</script>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/sweetalert2.min.js"></script>
+<script src="js/lazyload.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/tr.min.js"></script>
+<script src="js/smooth-scroll.polyfills.js"></script>
+<script src="js/tiny-slider.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/intlTelInput.min.js"></script>
+<script src="js/parallax.min.js"></script>
+  <script src="js/jquery.marquee.min.js"></script>
+<script src="js/store.js"></script>	<script>
+		var basketCartCountEl = $(".shopping-cart-count");
+		var basketCartCount = 0;
+		function showBasketCount(count) {
+			basketCartCountEl.text(count);
+			basketCartCountEl.css('display', 'inline-block');
+		}
+	</script>
+			<script>
+			showBasketCount(basketCartCount);
+		</script>
+	<script type="text/javascript">
+  var $onlineAPI = 1;
+  var $preloaderStatus = 'false';
+</script>
+<script src="js/main.min.js"></script>
+<script src="js/theme.min.js"></script>
+
+
+
+<script cookie-consent="functionality">
+  var theme = localStorage.getItem('theme') || defaultTheme;
+  
+  if (theme === 'dark') {
+    document.body.classList.add('dark');
+    $("#changeMode").find("i").attr("class", "shi shi-sun");
+		$("#skeloading_css").attr('href', '/apps/main/themes/blaze/public/assets/css/plugins/skeloading/skeloading-dark.min.css');
+  }
+  else {
+    document.body.classList.remove('dark');
+		$("#skeloading_css").attr('href', '/apps/main/themes/blaze/public/assets/css/plugins/skeloading/skeloading.min.css');
+  }
+  
+  $("#changeMode").on("click", function() {
+    theme = (theme === 'light') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    $(this).find("i").attr("class", theme === "light" ? "shi shi-moon" : "shi shi-sun");
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  });
+</script>
+
+      </body></html>
